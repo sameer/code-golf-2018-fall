@@ -1,4 +1,4 @@
-import sys, heapq
+import sys, heapq as h
 
 s = sys.stdin
 T = int(s.readline())
@@ -6,11 +6,11 @@ r = s.readline
 for i in range(T):
     L = list(set([x for x in r().split()]))
     k = int(r())
-    max_heap = [-float(x) for x in L]
-    heapq.heapify(max_heap)
+    m = [-float(x) for x in L]
+    h.heapify(m)
     for _ in range(k):
-        kth_largest = -heapq.heappop(max_heap)
+        g = -h.heappop(m)
     for x in L:
-        if float(x) == kth_largest:
+        if float(x) == g:
             print(x)
             break
